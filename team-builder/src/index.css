@@ -58,3 +58,7 @@ button {
 button[disabled] {
   opacity: 0.5;
 }
+.team-members{
+  margin:3px;
+  padding:2px;
+}

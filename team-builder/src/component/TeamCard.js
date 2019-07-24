@@ -2,10 +2,22 @@ import React from 'react';
 
 const TeamCard = (props) => {
 
-
     return (
-        <div>There will be bunch of team cards here </div>
+        props.userInfo.map(person =>(<RenderTeam key={person.email} person={person}/>) )
     );
 }
+
+function RenderTeam({person}){
+const {name, email, role} = person;
+return(
+
+    <div className="team-members">
+        <div>Name: {name}</div>
+        <div>Email: {email}</div>
+        <div>Role: {role}</div>
+        </div>   
+    )
+
+};
 
 export default TeamCard;
