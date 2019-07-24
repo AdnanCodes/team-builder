@@ -3,21 +3,40 @@ import React, { useState } from 'react';
 //Props passed from app are: userInfo(state) and modifyUser(setState)
 
 const Form = (props) => {
-
+    const [user, setUser] = useState(
+        {
+            name:"",
+            email:"",
+            role:'',
+        }
+      )
+      function handleSubmit(event){
+        event.preventDefault();
+        props.modifyUser([...props.userInfo,user])
+        console.log('Users in the house', props.userInfo)
+      
+      }
+      
+      function handleChange(event){
+        const newUser = {...user,[event.target.name]: event.target.value};
+        //Adding new user
+        setUser(newUser);
+        console.log(user)
+      }
     return (
 
-        <form onSubmit={event => props.handleSubmit(event)}>
+        <form onSubmit={handleSubmit}>
             <label>
                 Name:
-      <input type="text" id="name" name="name" onChange={event => props.handleChange(event)}/>
+      <input type="text" id="name" name="name" onChange={handleChange}/>
             </label>
             <label>
                 E-Mail:
-      <input type="email" id="name" name="email" onChange={event => props.handleChange(event)}/>
+      <input type="email" id="name" name="email" onChange={handleChange}/>
             </label>
             <label>
                 Role:
-      <input type="text" id="name" name="role" onChange={event => props.handleChange(event)}/>
+      <input type="text" id="name" name="role" onChange={handleChange}/>
             </label>
             <button type="submit">Dont Submit, THIS IS BUGGY STILL!</button>
         </form>
