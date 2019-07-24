@@ -24,7 +24,7 @@ function App() {
 ]
 
   const [teamUser, setTeamUser]=useState(teamMembers)
-  const {memberToEdit, setMemberToEdit}=useState({})
+  const {memberToEdit, setMemberToEdit}=useState(null)
   return (
     <div className="App">
       <Form userInfo={teamUser} modifyUser={setTeamUser}/>
