@@ -61,4 +61,5 @@ button[disabled] {
 .team-members{
   margin:3px;
   padding:2px;
+  padding-bottom: 20px;
 }
