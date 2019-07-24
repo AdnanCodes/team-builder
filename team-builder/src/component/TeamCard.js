@@ -15,6 +15,7 @@ return(
         <div>Name: {name}</div>
         <div>Email: {email}</div>
         <div>Role: {role}</div>
+        <button>Edit</button>
         </div>   
     )
 
