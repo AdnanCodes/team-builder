@@ -3,20 +3,21 @@ import React from 'react';
 const TeamCard = (props) => {
 
     return (
-        props.userInfo.map((person,index) =>(<RenderTeam key={index} person={person}/>) )
+        props.userInfo.map((person,index) =>(<RenderTeam key={index} person={person} editButton={props.setEdit}/>) )
     );
 }
 
-function RenderTeam({person}){
-const {name, email, role} = person;
+function RenderTeam(props){
+const {name, email, role} = props.person;
+
 return(
 
-    <div className="team-members">
+    <div className="team-member">
         <div>Name: {name}</div>
         <div>Email: {email}</div>
         <div>Role: {role}</div>
-        <button onClick>Edit</button>
-        </div>   
+        <button onClick={()=> props.editButton(props.person)}>Edit</button>
+    </div>   
     )
 
 };

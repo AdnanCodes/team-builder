@@ -24,11 +24,12 @@ function App() {
 ]
 
   const [teamUser, setTeamUser]=useState(teamMembers)
-  const {memberToEdit, setMemberToEdit}=useState(null)
+  const [memberToEdit, setMemberToEdit]=useState(null)
+
   return (
     <div className="App">
-      <Form userInfo={teamUser} modifyUser={setTeamUser}/>
-      <TeamCard userInfo={teamUser}/>
+      <Form userInfo={teamUser} modifyUser={setTeamUser} editMember={memberToEdit}/>
+      <div className='team-members'><TeamCard userInfo={teamUser} setEdit={setMemberToEdit}/></div>
     </div>
   );
 }

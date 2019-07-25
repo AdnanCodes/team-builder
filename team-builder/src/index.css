@@ -59,7 +59,17 @@ button[disabled] {
   opacity: 0.5;
 }
 .team-members{
+  display: flex;
+  justify-content: space-around;
+}
+.team-member{
+  max-width: 200px;
+  background: white;
   margin:3px;
-  padding:2px;
-  padding-bottom: 20px;
+  padding:20px;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+
+}
+.team-member > button {
+  margin-top: 15px;
 }
